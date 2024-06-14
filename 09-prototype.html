@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prototype</title>
+</head>
+<body>
+    <script>
+        // Constructor function
+        function Person() {
+            this.firstName = ""
+            this.lastName = ""
+            // method di constructor function
+            this.sayHello = function (name) {
+                console.log(`Hello ${name}, my name is ${this.firstName}`);
+            }
+        }
+
+        // membuat object instance
+        const eko = new Person();
+        eko.firstName = "Eko"; 
+        eko.sayHello("Joko"); // mengakses method instance object eko
+
+        const budi = new Person();
+        budi.firstName = "Budi"; // menambah property/mengubah value property instance object budi
+        budi.sayHello("Joko"); // // mengakses method instance object budi
+
+        console.log(eko);
+        console.log(budi);
+    </script>
+</body>
+</html>
