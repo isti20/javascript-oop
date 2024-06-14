@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Constructor inheritance</title>
+</head>
+<body>
+    <script>
+        function Employee(firstName) {
+            this.firstName = firstName
+            this.sayHello = function (name) {
+                console.log(`Hello ${name}, my name is ${this.firstName}`);
+            }
+        }
+
+        function Manager(firstName, lastName) {
+            this.lastName = lastName;
+            // mewarisi semua property di constructor function Employee
+            Employee.call(this, firstName); // this (object saat ini), property yg ada di Employee()
+
+        }
+
+        const eko = new Manager("Eko", "Khannedy");
+        console.log(eko);
+    </script>
+</body>
+</html>
