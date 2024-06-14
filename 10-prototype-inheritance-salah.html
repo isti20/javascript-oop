@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prototype inheritance salah</title>
+</head>
+<body>
+    <script>
+        function Employee(firstName) {
+            this.firstName = firstName
+        }
+
+        function Manager(firstName) {
+            this.firstName = firstName;
+        }
+
+        Manager.prototype = Employee.prototype; // salahnya disini
+
+        Manager.prototype.sayHello = function(name){
+            console.info(`Hello ${name}, my name is Manager ${this.firstName}`);
+        }
+
+        Employee.prototype.sayHello = function(name){
+            console.info(`Hello ${name}, my name is Employee ${this.firstName}`);
+        }
+
+        const employee = new Employee("Eko");
+        employee.sayHello("Joko"); // Hello Joko, my name is Employee Eko
+
+        const manager = new Manager("Budi");
+        manager.sayHello("Joko"); // Hello Joko, my name is Employee Budi
+
+    </script>
+</body>
+</html>
