@@ -15,7 +15,9 @@
 
         function Manager(firstName, lastName) {
             this.lastName = lastName;
-            Employee.call(this, firstName);
+            // mewarisi semua property yg dibuat di constructor function Employee
+            Employee.call(this, firstName); // this = object saat ini
+
         }
 
         const eko = new Manager("Eko", "Khannedy");
