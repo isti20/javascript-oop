@@ -6,27 +6,40 @@
 </head>
 <body>
     <script>
-        // Constructor function
+        
         function Person() {
             this.firstName = ""
             this.lastName = ""
-            // method di constructor function
             this.sayHello = function (name) {
                 console.log(`Hello ${name}, my name is ${this.firstName}`);
             }
         }
 
-        // membuat object instance
+        // menambahkan property ke prototype
+        Person.prototype.sayBye = function (){
+            console.info("Good Bye");
+        }
+
+        Person.prototype.run = function (){
+            console.info(`${this.firstName} is running`);
+        }
+
         const eko = new Person();
-        eko.firstName = "Eko"; 
-        eko.sayHello("Joko"); // mengakses method instance object eko
-
+        eko.firstName = "Eko";
+        
         const budi = new Person();
-        budi.firstName = "Budi"; // menambah property/mengubah value property instance object budi
-        budi.sayHello("Joko"); // // mengakses method instance object budi
-
+        budi.sayBye = function (){
+            console.log("Sampai jumpa");
+        }
+        
         console.log(eko);
         console.log(budi);
+
+        // mengakses property prototype
+        eko.sayBye(); // Good Bye
+        eko.run(); // Eko is running
+        budi.sayBye(); // Sampai jumpa
+
     </script>
 </body>
 </html>
