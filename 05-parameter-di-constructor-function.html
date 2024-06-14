@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parameter di constructor function</title>
+</head>
+<body>
+    <script>
+        function Person(firstName, lastName) {
+            this.firstName = firstName
+            this.lastName = lastName
+            this.sayHello = function (name) {
+                console.log(`Hello ${name}, my name is ${this.firstName} ${this.lastName}`);
+            }
+        }
+
+        // jumlah parameter yang dikirimkan sama dengan jumlah property
+        const budi = new Person("Budi", "Nugraha");
+        budi.sayHello("Joko"); // Hello Joko, my name is Budi Nugraha
+
+        // jika parameter yang dikirimkan lebih banyak dari jumlah property
+        const eko = new Person("Eko", "Kurniawan", "Khannedy");
+        eko.sayHello("Joko"); // Hello Joko, my name is Eko Kurniawan
+
+        // jika parameter yang dikirimkan lebih sedikit dari jumlah property
+        const nicholas = new Person("Nicholas");
+        nicholas.sayHello("Joko"); // Hello Joko, my name is Nicholas undefined
+
+        console.log(budi);
+        console.log(eko);
+        console.log(nicholas);
+    </script>
+</body>
+</html>
