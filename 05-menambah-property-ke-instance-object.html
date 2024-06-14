@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>menambah property ke instance object</title>
+</head>
+<body>
+    <script>
+        function Person() {
+            this.firstName = "";
+            this.lastName = "";
+            this.sayHello = function (name) {
+                console.log(`Hello ${name}, my name is ${this.firstName}`);
+            }
+        }
+
+        const eko = new Person();
+        eko.firstName = "Eko"; // memberi nilai ke property instance object eko
+        eko.middleName = "Kurniawan"; // menambah property ke instance object eko
+
+        const budi = new Person();
+
+        console.log(eko);
+        console.log(budi);
+    </script>
+</body>
+</html>
