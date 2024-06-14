@@ -6,7 +6,6 @@
 </head>
 <body>
     <script>
-        // Constructor function
         function Person() {
             this.firstName = ""
             this.lastName = ""
@@ -16,14 +15,9 @@
             }
         }
 
-        // membuat object dari constructor function (instance object)
+        // instance object otomatis punya method dari Person()
         const eko = new Person();
-        eko.firstName = "Eko"; // menambah property/mengubah value property instance object eko
-        eko.sayHello("Joko"); // mengakses method instance object eko
-
         const budi = new Person();
-        budi.firstName = "Budi"; // menambah property/mengubah value property instance object budi
-        budi.sayHello("Joko"); // // mengakses method instance object budi
 
         console.log(eko);
         console.log(budi);
