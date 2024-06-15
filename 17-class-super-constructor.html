@@ -20,7 +20,8 @@
       // child class
       class Manager extends Employee {
         constructor(firstName, lastName) {
-          super(firstName);
+          // wajib memanggil constructor super class (parent class)
+          super(firstName); // parameter tidak wajib diisi (optional)
           this.lastName = lastName;
         }
 
@@ -32,10 +33,10 @@
       }
 
       const budi = new Employee("Budi");
-      budi.sayHello("Joko");
+      budi.sayHello("Joko"); // Hello Joko, my name is employee Budi
 
       const eko = new Manager("Eko", "Khannedy");
-      eko.sayHello("Joko");
+      eko.sayHello("Joko"); // Hello Joko, my name is manager Eko Khannedy
 
       console.info(budi);
       console.info(eko);
