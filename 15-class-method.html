@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Class method</title>
+  </head>
+  <body>
+    <script>
+
+      class Person {
+        constructor(firstName) {
+          this.firstName = firstName;
+          // method di dalam constructor nempelnya di instance object (tidak direkomendasikan)
+          this.sayHi = function (name){
+            console.info(`Hi ${name}, my name is ${this.firstName}`);
+          }
+        }
+
+        // direkomendasikan membuat method di sini
+        sayHello(name) {
+          console.info(`Hello ${name}, my name is ${this.firstName}`);
+        }
+      }
+
+      const eko = new Person("Eko");
+      console.info(eko);
+      eko.sayHi("Joko"); // Hi Joko, my name is Eko
+      eko.sayHello("Joko"); // Hello Joko, my name is Eko
+
+      const budi = new Person("Budi");
+      console.info(budi);
+      budi.sayHi("Joko"); // Hi Joko, my name is Budi 
+      budi.sayHello("Joko"); // Hello Joko, my name is Budi
+      
+    </script>
+  </body>
+</html>
