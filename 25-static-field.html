@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Static field</title>
+  </head>
+  <body>
+    <script>
+      class Configuration {
+        // otomatis field ini menjadi milik class
+        static name = "Belajar JavaScript OOP";
+        static version = 1.0;
+        static author = "Eko Kurniawan";
+      }
+
+      const config = new Configuration();
+      console.info(config);
+
+      // mengakses static class field
+      Configuration.author = "Eko Khannedy";
+
+      console.info(Configuration.name); // Belajar JavaScript OOP
+      console.info(Configuration.version); // 1
+      console.info(Configuration.author); // Eko Khannedy
+    </script>
+  </body>
+</html>
