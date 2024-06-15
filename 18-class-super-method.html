@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Class: super method</title>
+  </head>
+  <body>
+    <script>
+      // parent class
+      class Shape {
+        paint() {
+          console.info("Paint Shape");
+        }
+      }
+
+      // child class
+      class Circle extends Shape {
+        paint() {
+          super.paint(); // memanggil paint() method parent class
+          console.info("Paint Circle");
+        }
+      }
+
+      const circle = new Circle();
+      circle.paint();
+      // Paint shape
+      // Paint Circle
+    </script>
+  </body>
+</html>
