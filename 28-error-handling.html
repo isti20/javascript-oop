@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Error handling</title>
+  </head>
+  <body>
+    <script>
+      class MathUtil {
+        static sum(...numbers) {
+          if (numbers.length === 0) {
+            throw new Error("Total parameter harus lebih dari 0");
+          }
+
+          let total = 0;
+          for (const number of numbers) {
+            total += number;
+          }
+          return total;
+        }
+      }
+
+      // error handling
+      try {
+        console.info(MathUtil.sum());
+        console.info("Eko");
+      } catch (error) {
+        console.info(`Terjadi error : ${error.message}`); // Terjadi error : Total parameter harus lebih dari 0
+      } finally {
+        console.info("Program selesai"); // Program selesai
+      }
+
+      console.info("Khannedy"); // Khannedy
+
+      class Counter {
+        #counter = 1;
+
+        next() {
+          // error handling
+          try {
+            return this.#counter;
+          } finally {
+            this.#counter++;
+          }
+        }
+      }
+
+      const counter = new Counter();
+      console.info(counter.next()); // 1
+      console.info(counter.next()); // 2
+      console.info(counter.next()); // 3
+      console.info(counter.next()); // 4
+      console.info(counter.next()); // 5
+    </script>
+  </body>
+</html>
