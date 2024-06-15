@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Class: public class field</title>
+  </head>
+  <body>
+    <script>
+      class Customer {
+        // public class field (bisa diakses dari luar class)
+        firstName;
+        lastName;
+        balance = 0;
+
+        constructor(firstName, lastName) {
+          // public class field bisa diakses dari constructor
+          this.firstName = firstName;
+          this.lastName = lastName;
+        }
+
+        sayHello() {}
+      }
+
+      const eko = new Customer("Eko", "Khannedy");
+      console.info(eko);
+      console.info(eko.firstName); // Eko
+    </script>
+  </body>
+</html>
