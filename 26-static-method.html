@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Static method</title>
+  </head>
+  <body>
+    <script>
+      class MathUtil {
+        // otomatis method ini menjadi milik class
+        static sum(...numbers) {
+          let total = 0;
+          for (const number of numbers) {
+            total += number;
+          }
+          return total;
+        }
+      }
+
+      // mengakses static class method
+      const result = MathUtil.sum(1, 1, 1, 1, 1);
+      console.info(result); // 5
+    </script>
+  </body>
+</html>
