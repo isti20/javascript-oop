@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Class inheritance</title>
+  </head>
+  <body>
+    <script>
+      class Employee {
+        sayHello(name) {
+          console.info(`Hello ${name}, my name is employee ${this.firstName}`);
+        }
+      }
+
+      // class inheritance (menggunakan kata kunci extends)
+      class Manager extends Employee {
+        sayHello(name) {
+          console.info(`Hello ${name}, my name is manager ${this.firstName}`);
+        }
+      }
+
+      const budi = new Employee();
+      budi.firstName = "Budi";
+      budi.sayHello("Joko"); // Hello Joko, my name is employee Budi
+
+      const eko = new Manager();
+      eko.firstName = "Eko";
+      eko.sayHello("Joko"); // Hello Joko, my name is manager Eko
+
+      console.info(budi);
+      console.info(eko);
+    </script>
+  </body>
+</html>
